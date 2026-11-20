@@ -5,12 +5,14 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-# The browser calls /api on nginx itself, which forwards to the API (see nginx.conf).
+# The browser calls /api on nginx itself, which forwards to the API (see default.conf.template).
 # That way frontend and API share the same origin and CORS isn't involved.
 ENV VITE_API_URL=/api
 RUN npm run build
 
 FROM nginx:1.27-alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Where nginx forwards /api/. The default reaches an API running on the Docker host.
+ENV API_URL=http://host.docker.internal:8080
+COPY default.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
