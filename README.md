@@ -1,5 +1,8 @@
 # Tutoring Management
 
+> [!IMPORTANT]
+> **This repository is archived.** The client now lives in [`frontend/`](https://github.com/jg-abreu/tutoring-management-system/tree/main/frontend) of [jg-abreu/tutoring-management-system](https://github.com/jg-abreu/tutoring-management-system), next to the API, with its commit history. Issues and changes go there.
+
 [![CI](https://github.com/jg-abreu/tutoring-management/actions/workflows/ci.yml/badge.svg)](https://github.com/jg-abreu/tutoring-management/actions/workflows/ci.yml)
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![TypeScript 6](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
